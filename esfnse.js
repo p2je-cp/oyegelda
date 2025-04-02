@@ -16,8 +16,8 @@ document.body.innerHTML = `
   </form>
   <p id="result"></p>
   <audio id="audioFemale">
-    <source src="oyegelda.ogg" type="audio/ogg">
-    <source src="oyegelda.mp3" type="audio/mpeg">
+    <source src="Oyegelda.ogg" type="audio/ogg">
+    <source src="Oyegelda.mp3" type="audio/mpeg">
     Tu navegador no soporta el elemento de audio.
   </audio>
   <audio id="audioMale">
