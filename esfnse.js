@@ -32,8 +32,8 @@ document.getElementById("weightForm").addEventListener("submit", function (event
 
   const weight = parseFloat(document.getElementById("weight").value);
   const gender = document.getElementById("gender").value;
-  const audioFemale = document.getElementById("audioFemale");
-  const audioMale = document.getElementById("audioMale");
+  const audioFemale = document.getElementById("Oyegelda");
+  const audioMale = document.getElementById("gymrat");
 
   let message = "";
 
