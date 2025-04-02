@@ -1,5 +1,4 @@
 // Simple Weight Opinion
-// Simple Weight Opinion
 document.body.innerHTML = `
   <h1>Como está tu Peso</h1>
   <form id="weightForm">
@@ -16,8 +15,8 @@ document.body.innerHTML = `
   </form>
   <p id="result"></p>
   <audio id="audioFemale">
-    <source src="Oyegelda.ogg" type="audio/ogg">
-    <source src="Oyegelda.mp3" type="audio/mpeg">
+    <source src="oyegelda.ogg" type="audio/ogg">
+    <source src="oyegelda.mp3" type="audio/mpeg">
     Tu navegador no soporta el elemento de audio.
   </audio>
   <audio id="audioMale">
@@ -32,18 +31,18 @@ document.getElementById("weightForm").addEventListener("submit", function (event
 
   const weight = parseFloat(document.getElementById("weight").value);
   const gender = document.getElementById("gender").value;
-  const audioFemale = document.getElementById("Oyegelda");
-  const audioMale = document.getElementById("gymrat");
+  const audioFemale = document.getElementById("audioFemale");
+  const audioMale = document.getElementById("audioMale");
 
   let message = "";
 
   if (weight > 0) {
     if (gender === "female" && weight >= 90) {
       message = "GORDA DETECTADA. LA LIPO NO SIRVE PARA LOS HIPOPÓTAMOS.";
-      audioFemale.play(); // Reproduce el audio si es mujer y pesa más de 90 kg
+      audioFemale.oncanplay = () => audioFemale.play(); // Asegúrate de que el audio esté listo antes de reproducirlo
     } else if (gender === "male" && weight >= 105) {
       message = "Eres hombre y pesas más de 105 kg. ¿Gymrat o necesitas ajustar tu dieta?";
-      audioMale.play(); // Reproduce el audio si es hombre y pesa más de 105 kg
+      audioMale.oncanplay = () => audioMale.play(); // Asegúrate de que el audio esté listo antes de reproducirlo
     } else {
       message = "Alto Larry.";
     }
